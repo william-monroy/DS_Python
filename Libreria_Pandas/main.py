@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 def titulo(txt):
     print()
     print('='*(len(txt)+2))
@@ -101,3 +103,19 @@ print('''
 ''')
 
 # Seleccion de Filas y Columnas
+df_sub = df.loc[1:5]
+
+# Diferencias entre iloc y loc
+titulo('Ejemplo de LOC')
+print(df_sub.loc[1])
+titulo('Ejemplo de ILOC')
+print(df_sub.iloc[1])
+
+print('\n------------------------------------------------\n')
+
+# Aceeso mediante nombre gracias a loc
+
+titulo('Columna Titulo')
+df.loc[:, 'title'] # Columna Duracion
+titulo('Columnas Titulo, Duración y Año')
+df.loc[:, ['title','duration', 'year']] # Columnas Titulo, Duración y Año
