@@ -1,33 +1,56 @@
-datos_persona = ['Sujeto', 'Prueba', 18, 1.77, 78]
-
-# Los datos de la lista corresponderán a: nombre, apellido, edad, estatura, peso
+datos_persona = ['William', 'Monroy', 20, 1.73, 75]
 
 nombre, apellido, edad, estatura, peso = datos_persona
 
-imc = peso / estatura ** 2  # Estatura al cuadrado (exponente 2)
-imc = peso / estatura ** 2  # Estatura al cuadrado (exponente 2)
+imc = peso / estatura ** 2
+imc = peso / estatura ** 2
 
-if imc <= 18.4:  # si el IMC es menor a 18.4
-    print("Peso bajo")
-elif imc >= 18.5 and imc <= 24.9:  # sino, si el IMC es mayor a 18.5 y menor 24.9
-    print("Peso normal")
-elif imc >= 25 and imc <= 29.9:  # sino, si el IMC es mayor a 25 y menor a 29.9
-    print("Sobre peso")
-else:  # sino cae en ninguno de los rangos anteriores entonces es mayor
-    print("Obesidad")
+resultado = ''
 
-guia = """
+if imc <= 18.4:
+    resultado = 'Peso bajo'
+elif imc >= 18.5 and imc <= 24.9:
+    resultado = 'Peso normal'
+elif imc >= 25 and imc <= 29.9:
+    resultado = 'Sobre peso'
+else:
+    resultado = 'Obesidad'
 
-      Cómo leer resultados
+print('''
+──────────────────────────────────
+──▄██─────────────────────────██▄─  ░█████╗░░█████╗░██╗░░░░░░█████╗░  ██╗███╗░░░███╗░█████╗░
+─████──▄▄▄▄─────────────▄▄▄▄──████  ██╔══██╗██╔══██╗██║░░░░░██╔══██╗  ██║████╗░████║██╔══██╗
+─██████▐▐▐▐█████████████▐▐▐▐██████  ██║░░╚═╝███████║██║░░░░░██║░░╚═╝  ██║██╔████╔██║██║░░╚═╝
+─████──▀██▀─────────────▀██▀──████  ██║░░██╗██╔══██║██║░░░░░██║░░██╗  ██║██║╚██╔╝██║██║░░██╗
+──▀██───██───────────────██───██▀─  ╚█████╔╝██║░░██║███████╗╚█████╔╝  ██║██║░╚═╝░██║╚█████╔╝
+────────██───────────────██───────  ░╚════╝░╚═╝░░╚═╝╚══════╝░╚════╝░  ╚═╝╚═╝░░░░░╚═╝░╚════╝░
+────────██───────────────██───────  
+────────██▄█████▄─▄█████▄██───────  
+────────███████████████████───────  ¡Hola, {}!
+────────████▌▐███████▌▐████───────
+────────███████████████████───────
+────────███████████████████───────  Tú peso registrado es de: {} kgs
+────────█████▌▐█████▌▐█████───────
+─────────██████▄▄▄▄▄██████────────  Tú estatura registrada es de: {} mts
+──────────███████████████─────────
+───────────█████████████──────────  De acuerdo con estos datos tú IMC es de {:.2f} lo que 
+────────────▀█████████▀───────────  indica: {}
+──────────────▀█████▀─────────────
+────────────────▀█▀───────────────
+──────────────────────────────────
+'''.format(nombre + ' ' + apellido, peso, estatura, imc, resultado))
 
-Nivéles de Peso de acuerdo al IMC:
+print('''
+                                 Cómo leer resultados
 
-IMC por debajo de 18.5: Peso bajo
+                            Nivéles de Peso de acuerdo al IMC:
 
-IMC entre 18.5 – 24.9: Peso normal
+                            IMC por debajo de 18.5: Peso bajo
 
-IMC entre 25.0 – 29.9: Sobrepeso
+                            IMC entre 18.5 – 24.9: Peso normal
 
-IMC de más de 30.0: Obesidad"""
+                            IMC entre 25.0 – 29.9: Sobrepeso
 
-print(guia)
+                            IMC de más de 30.0: Obesidad
+
+''')
